@@ -2,19 +2,36 @@
 
 ## Recommended Installs
 
-### Update Fedora Packages
-
-First thing to do after a fresh install is to update packages. This may take a couple of minutes:
-
-	sudo dnf update
-
 ### Install VirtualBox
 
-We will need to install VirtualBox, the heart of our developmental environment:
+We will need to install VirtualBox, the heart of our developmental environment. First, add the VirtualBox repo and then update the system:
 
 	cd /etc/yum.repos.d/
 	sudo wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
 	sudo dnf update
+
+We need to ensure that we are running the latest install kernel version. The version numbers from each of these outputs should match:
+
+	rpm -qa kernel |sort -V |tail -n 1
+	uname -r
+
+If they do not match, reboot the computer and check again.
+
+Next we need to install VirtualBox dependencies:
+
+	dnf install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
+	
+And then install VirtualBox:
+
+	dnf install VirtualBox-5.0
+
+NOTE: It's possible that the previous command completed with errors. This happens when we have Secure Boot enabled with SELinux as Oracle can't sign kernel modules using the Fedora key.  Disable Secure Boot and then run the following command to build the needed kernel modules:
+
+	/usr/lib/virtualbox/vboxdrv.sh setup
+
+Finally, we need to add our username to the 'vboxuers' group:
+
+	usermod -a -G vboxusers <username>
 
 
 
