@@ -1,8 +1,17 @@
 # Fedora 24 Configuration Guide for DevOps 
 
-## Relevant Links
+### Relevant Links
 
-
+- [VirtualBox](https://www.virtualbox.org/wiki/Documentation)
+- [Vagrant](https://www.vagrantup.com/)
+- [Ansible](https://www.ansible.com/)
+- [Gnome Tweak Tool](https://wiki.gnome.org/Apps/GnomeTweakTool)
+- [Gnome Shell Extensions](https://extensions.gnome.org/about/)
+- [RPMFusion Repository](http://rpmfusion.org/)
+- [VLC Media PLayer](http://www.videolan.org/vlc/index.html)
+- [Google Chrome](https://www.google.com/chrome/browser/desktop/)
+- [HipChat](https://www.hipchat.com/)
+- [Cheat](https://github.com/chrisallenlane/cheat) 
 
 ## Recommended Installs
 
@@ -29,7 +38,7 @@ And then install VirtualBox:
 
 	dnf install VirtualBox-5.0
 
-NOTE: It's possible that the previous command completed with errors. This happens when we have Secure Boot enabled with SELinux as Oracle can't sign kernel modules using the Fedora key.  Disable Secure Boot and then run the following command to build the needed kernel modules:
+*NOTE: It's possible that the previous command completed with errors. This happens when we have Secure Boot enabled with SELinux as Oracle can't sign kernel modules using the Fedora key.  Disable Secure Boot and then run the following command to build the needed kernel modules:*
 
 	/usr/lib/virtualbox/vboxdrv.sh setup
 
@@ -127,12 +136,6 @@ We like to use Hipchat for Team Communication and Collaboration. First we will n
 Now we can install hipchat:
 
 	sudo dnf install hipchat4
-
-### Install UNZIP
-
-You never know when a wild .RAR or .ZIP will appear:
-
-	sudo dnf install unzip
 
 ### Install Cheat
 
