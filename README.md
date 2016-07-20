@@ -135,3 +135,18 @@ And we can enable syntax highlighting:
 	export CHEATCOLORS=true
 
 Newly created or modified cheat files are stored in `~/.cheat/`.
+
+### Install Liquid Prompt
+
+[Liquid Prompt](https://github.com/nojhan/liquidprompt) gives us a dynamic prompt that integrates nicely with git and reminds us of changes to files and commits waiting to be pushed. We install by cloning from Github and adding to .bashrc:
+
+	cd
+	git clone https://github.com/nojhan/liquidprompt.git .liquidprompt
+	source .liquidprompt/liquidprompt
+
+And then we add the following to .bashrc:
+
+	# Only load Liquid Prompt in interactive shells, not from a script or from scp
+	[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
+
+
