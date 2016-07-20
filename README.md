@@ -4,7 +4,7 @@
 
 ### Install VirtualBox
 
-We will need to install VirtualBox, the heart of our developmental environment. First, add the VirtualBox repo and then update the system:
+First, add the VirtualBox repo and then update the system:
 
 	cd /etc/yum.repos.d/
 	sudo wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
@@ -29,10 +29,28 @@ NOTE: It's possible that the previous command completed with errors. This happen
 
 	/usr/lib/virtualbox/vboxdrv.sh setup
 
-Finally, we need to add our username to the 'vboxuers' group:
+Finally, we need to add our username to the `vboxuers` group:
 
 	usermod -a -G vboxusers <username>
 
+## Install Vagrant
+
+Install Vagrant with the following command:
+
+	dnf install vagrant
+
+Fedora uses `libvirt` as a default Vagrant provider so in order to use Virtualbox we need to set an environment variable:
+
+	echo "export VAGRANT_DEFAULT_PROVIDER=virtualbox" >> ~/.bashrc
+
+Next, we will install a few required packages that Fedora 24 needs:
+
+	dnf install ruby-devel redhat-rpm-config zlib-devel
+
+Finally, we will install a couple of handy plugins to make using Vagrant easier:
+
+	vagrant plugin install vagrant-cachier
+	vagrant plugin install vagrant-hostmanager
 
 
 ## Optional Installs
