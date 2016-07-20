@@ -1,5 +1,9 @@
 # Fedora 24 Configuration Guide for DevOps 
 
+## Relevant Links
+
+
+
 ## Recommended Installs
 
 ### Install VirtualBox
@@ -52,6 +56,11 @@ Finally, we will install a couple of handy plugins to make using Vagrant easier:
 	vagrant plugin install vagrant-cachier
 	vagrant plugin install vagrant-hostmanager
 
+### Install Ansible
+
+Install Ansible using the following command:
+
+	dnf install ansible
 
 ## Optional Installs
 
@@ -125,4 +134,14 @@ You never know when a wild .RAR or .ZIP will appear:
 
 	sudo dnf install unzip
 
+### Install Cheat
 
+Cheat allows us to creat and view "cheatsheets" on the command line so we can remember commands that we use frequently but not often enough to remember:
+
+	pip install cheat
+
+And we can enable syntax highlighting:
+
+	export CHEATCOLORS=true
+
+Newly created or modified cheat files are stored in `~/.cheat/`.
