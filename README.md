@@ -62,6 +62,12 @@ Install [Ansible](https://www.ansible.com/) using the following command:
 
 These are not required but may be selected based on user preference.
 
+### Install VIM Enhanced
+
+We can install [VIM Enhanced](https://apps.fedoraproject.org/packages/vim) with the following command:
+
+	dnf install vim-enhanced
+
 ### Install Gnome Tweak Tool
 
 Fedora 24 uses the gnome-shell desktop environment. To change some of gnome-shell's settings, you can install the [Gnome Tweak Tool](https://wiki.gnome.org/Apps/GnomeTweakTool): 	
