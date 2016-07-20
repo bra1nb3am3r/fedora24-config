@@ -1,23 +1,10 @@
 # Fedora 24 Configuration Guide for DevOps 
 
-### Relevant Links
-
-- [VirtualBox](https://www.virtualbox.org/wiki/Documentation)
-- [Vagrant](https://www.vagrantup.com/)
-- [Ansible](https://www.ansible.com/)
-- [Gnome Tweak Tool](https://wiki.gnome.org/Apps/GnomeTweakTool)
-- [Gnome Shell Extensions](https://extensions.gnome.org/about/)
-- [RPMFusion Repository](http://rpmfusion.org/)
-- [VLC Media PLayer](http://www.videolan.org/vlc/index.html)
-- [Google Chrome](https://www.google.com/chrome/browser/desktop/)
-- [HipChat](https://www.hipchat.com/)
-- [Cheat](https://github.com/chrisallenlane/cheat) 
-
 ## Recommended Installs
 
 ### Install VirtualBox
 
-First, add the VirtualBox repo and then update the system:
+First, add the [VirtualBox](https://www.virtualbox.org/wiki/Documentation) repo and then update the system:
 
 	cd /etc/yum.repos.d/
 	sudo wget http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
@@ -48,7 +35,7 @@ Finally, we need to add our username to the `vboxuers` group:
 
 ## Install Vagrant
 
-Install Vagrant with the following command:
+Install [Vagrant](https://www.vagrantup.com/) with the following command:
 
 	dnf install vagrant
 
@@ -67,7 +54,7 @@ Finally, we will install a couple of handy plugins to make using Vagrant easier:
 
 ### Install Ansible
 
-Install Ansible using the following command:
+Install [Ansible](https://www.ansible.com/) using the following command:
 
 	dnf install ansible
 
@@ -77,32 +64,32 @@ These are not required but may be selected based on user preference.
 
 ### Install Gnome Tweak Tool
 
-Fedora 24 uses the gnome-shell desktop environment. To change some of gnome-shell's settings, you can install the Gnome Tweak Tool: 	
+Fedora 24 uses the gnome-shell desktop environment. To change some of gnome-shell's settings, you can install the [Gnome Tweak Tool](https://wiki.gnome.org/Apps/GnomeTweakTool): 	
 
 	sudo dnf install gnome-tweak-tool
 
 ### Install Gnome Shell Extensions
 
-There is a section in Gnome Tweak Tool to modify the default built in extensions for Gnome Shell. We can find more extensions here:
+There is a section in Gnome Tweak Tool to modify the default built in extensions for Gnome Shell. We can find more extensions on the [Gnome Shell Extensions](https://extensions.gnome.org/about/) website:
 
 	https://extensions.gnome.org
 
 ### Activate RPMFusion Repository
 
-The RPMFusion provides some free and non-free software for Fedora. The repo can be used via the command line. The repository is meant to provide stable and tested packages for Fedora so it is highly recommended to activate it on your system with:
+The [RPMFusion Repository](http://rpmfusion.org/) provides some free and non-free software for Fedora. The repo can be used via the command line. The repository is meant to provide stable and tested packages for Fedora so it is highly recommended to activate it on your system with:
 
 	sudo rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
 
 
 ### Install VLC Media Player
 
-VLC is a superior video player that supports neraly every video format available and is included on the RPMFusion repo that we just activated:
+[VLC Media Player](http://www.videolan.org/vlc/index.html) is a superior video player that supports neraly every video format available and is included on the RPMFusion repo that we just activated:
 
 	sudo dnf install vlc
 
 ### Install Google Chrome
 
-It's always nice to have a second browser and Chrome allows me to easily sync all of my bookmarks across all of my devices. First we will need to create the repo file:
+It's always nice to have a second browser and [Google Chrome](https://www.google.com/chrome/browser/desktop/) allows us to easily sync all of our bookmarks across all of our devices. First we will need to create the repo file:
 
 	sudo cat << EOF > /etc/yum.repos.d/google-chrome.repo
 	[google-chrome]
@@ -121,7 +108,7 @@ Then we can install the stable version of Chrome:
 
 ### Install Hipchat 
 
-We like to use Hipchat for Team Communication and Collaboration. First we will need to create the repo file:
+We like to use [HipChat](https://www.hipchat.com/) for Team Communication and Collaboration. First we will need to create the repo file:
 
 	sudo cat << EOF > /etc/yum.repos.d/hipchat.repo
 	[atlassian-hipchat]
@@ -139,7 +126,7 @@ Now we can install hipchat:
 
 ### Install Cheat
 
-Cheat allows us to creat and view "cheatsheets" on the command line so we can remember commands that we use frequently but not often enough to remember:
+[Cheat](https://github.com/chrisallenlane/cheat) allows us to creat and view "cheatsheets" on the command line so we can remember commands that we use frequently but not often enough to remember:
 
 	pip install cheat
 
